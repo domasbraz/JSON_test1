@@ -1,0 +1,26 @@
+[
+  {
+    "name": "Newson Peter",
+    "email": "peterk36@gmail.com",
+    "phone": "085-857-4120",
+    "investment": "€5,200"
+  },
+  {
+    "name": "West Mary",
+    "email": "westm1234@ymail.com",
+    "phone": "086-726-9150",
+    "investment": "€7,500"
+  },
+  {
+    "name": "Rainbow Color",
+    "email": "seven123@outlook.com",
+    "phone": "083-135-7908",
+    "investment": "€3,250"
+  },
+  {
+    "name": "Mercer Robyn",
+    "email": "Mer123Rob@hotmail.com",
+    "phone": "087-912-6384",
+    "investment": "€10,300"
+  }
+]

@@ -1,0 +1,93 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <title>Example: Display JSON Data to HTML Table</title>
+  <style>
+    /* CSS styles for the page */
+    body {
+      font-family: Arial, sans-serif;
+    }
+
+    h1 {
+      text-align: center;
+      color: #2a93d5;
+    }
+
+    table {
+      width: 100%;
+      border-collapse: collapse;
+      border: 2px double #2A93D5;
+    }
+
+    th, td {
+      padding: 10px 15px;
+      text-align: left;
+      color: #f50a45; /* Set the text color for table cells */
+      border: 2px double #3232c9;
+      background-color: #2A93D5; /* Set your desired color here */
+      font-size: 24px;
+    }
+
+    th {
+      background-color: #d7c3eb;
+      font-size: 30px;
+      font-weight: bold;
+      text-align: center;
+      color: #eb2214; /* Set the text color for table headers */
+    }
+
+    tr:nth-child(even) {
+      background-color: #f50a45;
+    }
+
+    tr:hover {
+      background-color: #914DE5;
+    }
+  </style>
+</head>
+<body>
+  <h1>JSON Data to HTML Table</h1>
+  <table id="data-table">
+    <thead>
+      <tr>
+        <th>Name</th>
+        <th>Email</th>
+        <th>Phone</th>
+        <th>Investment</th>
+      </tr>
+    </thead>
+    <tbody></tbody>
+  </table>
+  <script>
+    document.addEventListener("DOMContentLoaded", function() {
+      var xhr = new XMLHttpRequest();
+
+      xhr.onreadystatechange = function() {
+        if (xhr.readyState === XMLHttpRequest.DONE) {
+          if (xhr.status === 200) {
+            var data = JSON.parse(xhr.responseText);
+            var tableBody = document.getElementById("data-table").getElementsByTagName("tbody")[0];
+
+            data.forEach(function(person) {
+              var row = document.createElement("tr"); // Create a new table row
+
+              // Create table cells and fill them with the person's data
+              row.innerHTML += "<td>" + person.name + "</td>";
+              row.innerHTML += "<td>" + person.email + "</td>";
+              row.innerHTML += "<td>" + person.phone + "</td>";
+              row.innerHTML += "<td>" + person.investment + "</td>";
+
+              tableBody.appendChild(row); // Add the row to the table body
+            });
+          } else {
+            console.error("Failed to fetch the data: " + xhr.status);
+          }
+        }
+      };
+
+      xhr.open("GET", "investment.json", true);
+      xhr.send();
+    });
+  </script>
+</body>
+</html>
