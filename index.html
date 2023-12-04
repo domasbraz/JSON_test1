@@ -17,15 +17,15 @@
   table {
     width: 100%;
     border-collapse: collapse;
-    border: 2px double ##2A93D5;
+    border: 2px double #2A93D5;
   }
 
   th, td {
     padding: 10px 15px;
     text-align: left;
-    color: ##55A9DD; /* Set the text color for table cells */
+    color: #55A9DD; /* Set the text color for table cells */
     border: 2px double #3232c9;
-    background-color: ##2A93D5; /* Set your desired color here */
+    background-color: #2A93D5; /* Set your desired color here */
     font-size: 24px;
   }
 
@@ -74,7 +74,7 @@
           row.append($("<td></td>").text(person.name));
           row.append($("<td></td>").text(person.email));
           row.append($("<td></td>").text(person.phone));
-          row.append($("<td></td>").text(person.investment));
+          row.append($("<td></td>").text(person.investment.price));
 
           tableBody.append(row); // Add the row to the table body
         });

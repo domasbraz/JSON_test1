@@ -3,7 +3,8 @@
     "name": "Newson Peter",
     "email": "peterk36@gmail.com",
     "phone": "085-857-4120",
-    "investment": "€5,200"
+    "investment": 
+    {"price": "707070"}
   },
   {
     "name": "West Mary",
